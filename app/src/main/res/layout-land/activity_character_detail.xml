@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/back6">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_white" />
+
+    <TextView
+        android:id="@+id/characterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/avenir"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="Name"/>
+
+    <ImageView
+        android:layout_below="@id/characterName"
+        android:id="@+id/imageView"
+        android:layout_width="275dp"
+        android:layout_height="275dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="50dp"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+
+        android:id="@+id/constantRl"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_below="@id/characterName"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="Status: "
+            android:layout_marginLeft="20sp"
+            />
+
+        <TextView
+            android:id="@+id/genderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:text="Gender:"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/statusText"
+            android:layout_marginTop="5sp"/>
+
+
+        <TextView
+            android:id="@+id/specyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Specy:"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:layout_below="@id/genderText"
+            android:layout_marginTop="5sp"/>
+
+
+
+        <TextView
+            android:id="@+id/originText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:text="Origin:"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:layout_below="@id/specyText"
+            android:layout_marginTop="5sp"
+            />
+
+
+        <TextView
+            android:id="@+id/locationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:text="Location:"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:layout_below="@id/originText"
+            android:layout_marginTop="5sp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/episodeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:text="Episode:"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:layout_below="@id/locationText"
+            android:layout_marginTop="5sp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/createdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:text="Created at\n(in API):"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:layout_below="@id/episodeText"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="20dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/variableRl"
+        android:layout_toEndOf="@id/constantRl"
+        android:layout_below="@id/characterName"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:text="Status text"
+            android:textStyle="normal"
+            android:layout_marginLeft="20sp"
+            />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:textColor="@color/white"
+            android:text="gender text"
+            android:layout_below="@id/status"
+            android:layout_marginTop="5sp"
+            />
+
+        <TextView
+            android:id="@+id/specy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:textColor="@color/white"
+            android:text="specy text"
+            android:layout_below="@id/gender"
+            android:layout_marginTop="5sp"
+            />
+
+        <TextView
+            android:id="@+id/origin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:textColor="@color/white"
+            android:text="origin text"
+            android:layout_below="@id/specy"
+            android:layout_marginTop="5sp"
+            />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textStyle="normal"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:text="location text"
+            android:layout_below="@id/origin"
+            android:layout_marginTop="5sp"
+            />
+
+        <TextView
+            android:id="@+id/episode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:textColor="@color/white"
+            android:text="episode text"
+            android:layout_below="@id/location"
+            android:layout_marginTop="5sp"
+            />
+
+        <TextView
+            android:id="@+id/created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textStyle="normal"
+            android:textSize="22dp"
+            android:textColor="@color/white"
+            android:layout_below="@id/episode"
+            android:text="create text"
+            android:layout_marginTop="5sp"
+            />
+
+    </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
