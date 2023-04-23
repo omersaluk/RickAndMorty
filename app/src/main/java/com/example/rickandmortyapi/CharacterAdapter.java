@@ -40,7 +40,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.View
 
 
         if(character.getGender().equals("Female")) {
-            holder.genderView.setImageResource(R.drawable.female_pink); // kadın resmi ekle
+            holder.genderView.setImageResource(R.drawable.female_pink);
 
             FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) holder.imageView.getLayoutParams();
             params.gravity = Gravity.END;
@@ -52,7 +52,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.View
 
 
         } else if(character.getGender().equals("Male")) {
-            holder.genderView.setImageResource(R.drawable.male_blue); // erkek resmi ekle
+            holder.genderView.setImageResource(R.drawable.male_blue);
             FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) holder.imageView.getLayoutParams();
             params.gravity = Gravity.START;
             holder.imageView.setLayoutParams(params);
@@ -62,7 +62,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.View
 
 
         } else if (character.getGender().equals("unknown")){
-            holder.genderView.setImageResource(R.drawable.question_mark_orange); // bilinmeyen cinsiyet resmi ekle
+            holder.genderView.setImageResource(R.drawable.question_mark_orange);
             FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) holder.imageView.getLayoutParams();
             params.gravity = Gravity.END;
             holder.imageView.setLayoutParams(params);

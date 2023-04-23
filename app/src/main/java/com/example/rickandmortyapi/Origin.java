@@ -25,6 +25,5 @@ public class Origin {
     @SerializedName("url")
     private String url;
 
-    // Getter and setter methods
 
 }

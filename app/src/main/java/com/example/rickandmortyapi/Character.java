@@ -105,8 +105,6 @@ public class Character {
     private String url;
     private String created;
 
-    // Diğer alanların getter ve setter metotları
-
     public Origin getOrigin() {
         return origin;
     }

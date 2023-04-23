@@ -44,7 +44,7 @@ public class LocationFragment extends Fragment {
     private static final String ARG_LOCATION_NAME = "location_name";
 
     public LocationFragment() {
-        // Required empty public constructor
+
     }
 
     public static LocationFragment newInstance(String locationName) {
@@ -75,8 +75,6 @@ public class LocationFragment extends Fragment {
 
         apiService = retrofit.create(ApiService.class);
 
-
-        // Inflate the layout for this fragment
         return view;
 
     }
@@ -98,9 +96,9 @@ public class LocationFragment extends Fragment {
 
 
 
-    private List<Character> allCharacters = new ArrayList<>(); // Toplam karakter listesi
-    private Set<Integer> addedCharacterIds = new HashSet<>(); // Eklenen karakterlerin kimlik numaraları
-    private Map<Integer, Character> characterCache = new HashMap<>(); // Karakter önbelleği
+    private List<Character> allCharacters = new ArrayList<>();
+    private Set<Integer> addedCharacterIds = new HashSet<>();
+    private Map<Integer, Character> characterCache = new HashMap<>();
 
     @Override
     public void onResume() {
@@ -109,8 +107,8 @@ public class LocationFragment extends Fragment {
         Bundle args = getArguments();
         String locationName = args.getString(ARG_LOCATION_NAME, "");
 
-        if (allCharacters.isEmpty()) {  // listenin boş olup olmadığını kontrol etmek için eklenen kod
-            for (int i = 1; i <= 183; i++) { // Tüm sayfaları dolaşıp karakterleri yükle
+        if (allCharacters.isEmpty()) {
+            for (int i = 1; i <= 183; i++) {
                 Call<CharacterResponse> call = apiService.getCharacters(i);
 
                 call.enqueue(new Callback<CharacterResponse>() {
@@ -122,16 +120,15 @@ public class LocationFragment extends Fragment {
                             for (Character character : characters) {
                                 int characterId = character.getId();
 
-                                // Karakter önbelleğinde yoksa eklemeye çalış
                                 if (!characterCache.containsKey(characterId)) {
-                                    // Ekli karakterler kümesini kontrol et ve ekleme işlemi başarılıysa devam et
+
                                     if (addedCharacterIds.add(characterId)) {
                                         characterCache.put(characterId, character);
                                     }
                                 }
                             }
 
-                            loadFilteredData(locationName); // Filtrelenmiş verileri yükle
+                            loadFilteredData(locationName);
                         }
                     }
 
@@ -141,24 +138,23 @@ public class LocationFragment extends Fragment {
                     }
                 });
             }
-        } else {  // liste doluysa önbelleği kontrol et ve filtrelemeyi yap
+        } else {
             for (Character character : allCharacters) {
                 int characterId = character.getId();
 
-                // Karakter önbelleğinde yoksa eklemeye çalış
+
                 if (!characterCache.containsKey(characterId)) {
                     characterCache.put(characterId, character);
                 }
             }
 
-            loadFilteredData(locationName); // Filtrelenmiş verileri yükle
+            loadFilteredData(locationName);
         }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        // Karakter önbelleğini temizle
         characterCache.clear();
         addedCharacterIds.clear();
         allCharacters.clear();

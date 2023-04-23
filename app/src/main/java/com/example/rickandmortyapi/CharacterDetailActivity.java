@@ -57,18 +57,14 @@ public class CharacterDetailActivity extends AppCompatActivity {
         }
         String episodeString = TextUtils.join(", ", episodeList);
 
-        // İlk olarak orijinal stringin formatını belirtiyoruz:
+
         SimpleDateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault());
-// Daha sonra istediğimiz formatı belirliyoruz:
         SimpleDateFormat targetFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
 
         try {
-            // Orijinal stringi parçalayarak bir Date nesnesine dönüştürüyoruz:
-            Date date = originalFormat.parse(created);
-            // Date nesnesini istediğimiz formata dönüştürüyoruz:
-            String formattedDatetime = targetFormat.format(date);
 
-            // Elde ettiğimiz sonucu ekrana yazdırabiliriz:
+            Date date = originalFormat.parse(created);
+            String formattedDatetime = targetFormat.format(date);
 
             createChar.setText(formattedDatetime);
         } catch (ParseException e) {

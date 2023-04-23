@@ -20,7 +20,4 @@ public class CharacterResponse {
             this.results = results;
         }
 
-        // getter ve setter metotlarını buraya ekleyin
-
-
 }
